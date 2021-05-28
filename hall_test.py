@@ -14,11 +14,10 @@ except ImportError:
 
 GPIO.setmode(GPIO.BOARD)
 GPIO.setup(11, GPIO.IN, pull_up_down=GPIO.PUD_UP)
-input = GPIO.input(11)
 
 try:
     while True:
-        if input:
+        if GPIO.input(11):
             print("No magnet")
         else:
             print("Magnet")
